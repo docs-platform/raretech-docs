@@ -1,22 +1,14 @@
 // scripts/fix-table-separators.mjs
 import fs from "node:fs/promises";
-import path from "node:path";
 import fg from "fast-glob";
+import path from "node:path";
 
 const DASH_COUNT = 4;
 
-/**
- * テーブル区切り行っぽい行を判定する
- * 例:
- * | --- | --- |
- * | :--- | ---: |
- * |:---:|---|
- */
 function isDelimiterRow(line) {
   const trimmed = line.trim();
   if (!trimmed.includes("|")) return false;
 
-  // パイプ区切りの各セルが「コロンとハイフンと空白」だけで構成されているか
   const cells = trimmed
     .replace(/^\|/, "")
     .replace(/\|$/, "")
@@ -27,9 +19,6 @@ function isDelimiterRow(line) {
   return cells.every((cell) => /^:?-{3,}:?$/.test(cell));
 }
 
-/**
- * 区切りセルを `----` 固定にする（コロンは保持）
- */
 function normalizeCell(cell) {
   const trimmed = cell.trim();
   const leftColon = trimmed.startsWith(":");
@@ -56,39 +45,46 @@ function normalizeDelimiterRow(line) {
   const withPipes =
     (hasLeadingPipe ? "|" : "") + joined + (hasTrailingPipe ? "|" : "");
 
-  // 元のインデントは維持
   const indentMatch = line.match(/^\s*/);
   const indent = indentMatch ? indentMatch[0] : "";
   return indent + withPipes;
 }
 
 async function processFile(filePath) {
-  const original = await fs.readFile(filePath, "utf-8");
-  const lines = original.split("\n");
+  try {
+    const original = await fs.readFile(filePath, "utf-8");
+    const lines = original.split("\n");
 
-  let changed = false;
-  const next = lines.map((line) => {
-    if (!isDelimiterRow(line)) return line;
-    changed = true;
-    return normalizeDelimiterRow(line);
-  });
+    let changed = false;
+    const next = lines.map((line) => {
+      if (!isDelimiterRow(line)) return line;
+      changed = true;
+      return normalizeDelimiterRow(line);
+    });
 
-  if (changed) {
-    await fs.writeFile(filePath, next.join("\n"), "utf-8");
+    if (changed) {
+      await fs.writeFile(filePath, next.join("\n"), "utf-8");
+    }
+  } catch {
+    // ignore non-md or missing files
   }
 }
 
 async function main() {
-  // 引数があればそれを、なければ articles 配下の md を対象にする
-  const patterns = process.argv.slice(2);
-  const targets =
-    patterns.length > 0 ? await fg(patterns) : await fg(["articles/**/*.md"]);
+  const args = process.argv.slice(2);
 
-  const uniqueTargets = Array.from(new Set(targets)).filter((p) =>
-    p.endsWith(".md"),
-  );
+  let targets = [];
 
-  await Promise.all(uniqueTargets.map(processFile));
+  if (args.length > 0) {
+    // globでも単一ファイルでも対応
+    targets = await fg(args, { absolute: true });
+  } else {
+    targets = await fg(["articles/**/*.md"], { absolute: true });
+  }
+
+  const mdTargets = targets.filter((p) => p.endsWith(".md"));
+
+  await Promise.all(mdTargets.map(processFile));
 }
 
 main().catch((err) => {

@@ -58,10 +58,10 @@ clone後にVSCodeを開くと「推奨拡張機能があります」と表示さ
 ① 記事作成
 
 ```
-articles/stepXXX.md
+articles/記事.md
 ```
 
-② Lint実行
+② 保存時に自動整形&テーブル
 
 ```
 npm run lint
@@ -73,3 +73,4 @@ npm run lint
 
 - VSCodeでMarkdown Preview Enhancedを開く（Macの場合`⌘ + SHIFT + V`）
 - 拡張ブロックが正しく表示されるか確認
+

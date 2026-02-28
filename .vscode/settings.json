@@ -2,18 +2,16 @@
   "editor.formatOnSave": true,
 
   "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
 
-  "markdown-preview-enhanced.usePandocParser": false,
-  "markdown-preview-enhanced.enableScriptExecution": true,
-
-  "files.eol": "\n",
-
-  "runOnSave.commands": [
-    {
-      "match": "\\.md$",
-      "cmd": "node scripts/fix-table-separators.mjs ${file}"
-    }
-  ]
+  "emeraldwalk.runonsave": {
+      "commands": [
+          {
+              "match": "\\.md$",
+              "cmd": "node ./scripts/fix-table-separators.mjs ${file}"
+          }
+      ]
+  }
 }
