@@ -57,20 +57,15 @@ clone後にVSCodeを開くと「推奨拡張機能があります」と表示さ
 
 ① 記事作成
 
+articlesディレクトリ内に下書きを作成
+
 ```
 articles/記事.md
 ```
 
-② 保存時に自動整形&テーブル
-
-```
-npm run lint
-```
-
-エラーが出たら修正。
+② 保存時に自動整形&テーブル区切りを----に更新
 
 ③ プレビュー確認
 
 - VSCodeでMarkdown Preview Enhancedを開く（Macの場合`⌘ + SHIFT + V`）
-- 拡張ブロックが正しく表示されるか確認
-
+- Markdownが正しく表示されるか確認
