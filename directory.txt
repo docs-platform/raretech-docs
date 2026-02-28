@@ -1,0 +1,100 @@
+.
+├── articles
+│   └── step例.md
+├── directory.txt
+├── node_modules
+│   ├── @isaacs
+│   ├── @nodelib
+│   ├── @pkgjs
+│   ├── @types
+│   ├── ansi-escapes
+│   ├── ansi-regex
+│   ├── ansi-styles
+│   ├── argparse
+│   ├── balanced-match
+│   ├── brace-expansion
+│   ├── braces
+│   ├── cli-cursor
+│   ├── cli-truncate
+│   ├── color-convert
+│   ├── color-name
+│   ├── colorette
+│   ├── commander
+│   ├── cross-spawn
+│   ├── deep-extend
+│   ├── eastasianwidth
+│   ├── emoji-regex
+│   ├── entities
+│   ├── environment
+│   ├── eventemitter3
+│   ├── fast-glob
+│   ├── fastq
+│   ├── fill-range
+│   ├── foreground-child
+│   ├── get-east-asian-width
+│   ├── get-stdin
+│   ├── glob
+│   ├── glob-parent
+│   ├── husky
+│   ├── ignore
+│   ├── ini
+│   ├── is-extglob
+│   ├── is-fullwidth-code-point
+│   ├── is-glob
+│   ├── is-number
+│   ├── isexe
+│   ├── jackspeak
+│   ├── js-yaml
+│   ├── jsonc-parser
+│   ├── linkify-it
+│   ├── lint-staged
+│   ├── listr2
+│   ├── log-update
+│   ├── lru-cache
+│   ├── markdown-it
+│   ├── markdownlint
+│   ├── markdownlint-cli
+│   ├── markdownlint-micromark
+│   ├── mdurl
+│   ├── merge2
+│   ├── micromatch
+│   ├── mimic-function
+│   ├── minimatch
+│   ├── minimist
+│   ├── minipass
+│   ├── nano-spawn
+│   ├── onetime
+│   ├── path-key
+│   ├── path-scurry
+│   ├── pidtree
+│   ├── prettier
+│   ├── punycode.js
+│   ├── queue-microtask
+│   ├── restore-cursor
+│   ├── reusify
+│   ├── rfdc
+│   ├── run-con
+│   ├── run-parallel
+│   ├── shebang-command
+│   ├── shebang-regex
+│   ├── signal-exit
+│   ├── slice-ansi
+│   ├── string-argv
+│   ├── string-width
+│   ├── string-width-cjs
+│   ├── strip-ansi
+│   ├── strip-ansi-cjs
+│   ├── strip-json-comments
+│   ├── to-regex-range
+│   ├── uc.micro
+│   ├── which
+│   ├── wrap-ansi
+│   ├── wrap-ansi-cjs
+│   └── yaml
+├── package-lock.json
+├── package.json
+├── README.md
+└── scripts
+    └── fix-table-separators.mjs
+
+92 directories, 6 files

@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "shd101wyy.markdown-preview-enhanced",
+    "DavidAnson.vscode-markdownlint",
+    "EditorConfig.EditorConfig",
+    "emeraldwalk.runonsave"
+  ]
+}

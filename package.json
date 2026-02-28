@@ -1,0 +1,23 @@
+{
+  "name": "raretech-docs",
+  "version": "1.0.0",
+  "description": "RareTECH教材専用の執筆標準環境",
+  "main": "index.js",
+  "scripts": {
+    "lint": "markdownlint articles/**/*.md",
+    "lint:fix": "markdownlint articles/**/*.md --fix",
+    "format:md": "prettier --write \"articles/**/*.md\"",
+    "fix:table": "node scripts/fix-table-separators.mjs \"articles/**/*.md\"",
+    "format": "npm run format:md && npm run fix:table"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "markdownlint-cli": "^0.39.0",
+    "prettier": "^3.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
