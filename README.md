@@ -45,8 +45,7 @@ clone後にVSCodeを開くと「推奨拡張機能があります」と表示さ
 
 ## 3. RareTECH専用Markdownプレビューの再現
 
-プロジェクト内にMPE設定を固定する。
-これにより、チーム全員が同じMarkdownプレビューを使えるようになる。
+チーム全員が同じMarkdownプレビューを使えるようになる。
 
 ```bash
 ⌘ + Shift + P
@@ -67,5 +66,5 @@ articles/記事.md
 
 ③ プレビュー確認
 
-- VSCodeでMarkdown Preview Enhancedを開く（Macの場合`⌘ + SHIFT + V`）
+- VSCodeでMarkdown Preview Enhancedを開く
 - Markdownが正しく表示されるか確認
