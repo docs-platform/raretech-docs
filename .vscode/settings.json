@@ -1,10 +1,19 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
 
   "[markdown]": {
-    "editor.defaultFormatter": null,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
 
-  "files.eol": "\n"
+  "markdown-preview-enhanced.usePandocParser": false,
+  "markdown-preview-enhanced.enableScriptExecution": true,
+
+  "files.eol": "\n",
+
+  "runOnSave.commands": [
+    {
+      "match": "\\.md$",
+      "cmd": "node scripts/fix-table-separators.mjs ${file}"
+    }
+  ]
 }
