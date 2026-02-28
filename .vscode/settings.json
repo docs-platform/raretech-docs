@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": false,
+
+  "[markdown]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+
+  "files.eol": "\n"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "raretech-docs",
+  "version": "1.0.0",
+  "description": "RareTECH教材専用の執筆標準環境",
+  "main": "index.js",
+  "scripts": {
+    "lint": "markdownlint articles/**/*.md",
+    "lint:fix": "markdownlint articles/**/*.md --fix"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.39.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "markdownlint-cli": "^0.47.0"
+  }
+}
